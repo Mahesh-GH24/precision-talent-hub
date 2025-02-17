@@ -2,6 +2,7 @@
 import { useEffect, useState } from 'react';
 import { searchGithub, searchGithubUser } from '../api/API';
 import Candidate from '../interfaces/Candidate.interface';
+import CandidateInfo from '../components/CandidateInfo';
 
 
 const CandidateSearch = () => {
@@ -47,21 +48,21 @@ const CandidateSearch = () => {
   };
 
   //ignoreCandidate - Simply move on to next Candidate without Saving
-  // const ignoreCandidate =() => {
-  //   getRandomCandidate();
-  // }
+  const ignoreCandidate =() => {
+    getRandomCandidate();
+  }
 
   //addCandidate - Save to local storage and move to next Candidate
-  // const addCandidate =() => {
-  //   if (candidate_saved) {
-  //     //Get All Saved Candidates from localstorage
-  //     const savedCandidates = JSON.parse(localStorage.getItem("Saved_Candidates") || "[]");
-  //     savedCandidates.push(candidate_saved);
-  //     localStorage.setItem("Saved_Candidates", JSON.stringify(savedCandidates));
-  //   }
-  //   //Fetch the next Candidate and display
-  //   getRandomCandidate();
-  // };
+  const addCandidate =() => {
+    if (candidate_saved) {
+      //Get All Saved Candidates from localstorage
+      const savedCandidates = JSON.parse(localStorage.getItem("Saved_Candidates") || "[]");
+      savedCandidates.push(candidate_saved);
+      localStorage.setItem("Saved_Candidates", JSON.stringify(savedCandidates));
+    }
+    //Fetch the next Candidate and display
+    getRandomCandidate();
+  };
 
   return (
     <div>
@@ -69,7 +70,11 @@ const CandidateSearch = () => {
       {loading && <p> Still Loading...</p>}
       {error && <p className="error">{error}</p>}
       {candidate_saved && !loading && !error && (
-        <p>Candidate Detailed Information Coming Soon...</p>
+        <CandidateInfo
+          candidate={candidate_saved}
+          onAdd = {addCandidate}    
+          onIgnore={ignoreCandidate}    
+        />  
       )}
       {!candidate_saved && !loading && !error && <p> No Candidates to Display</p>}
     </div>
