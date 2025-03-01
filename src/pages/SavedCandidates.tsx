@@ -1,6 +1,7 @@
 //Standard imports - hooks and interface
 import { useState, useEffect } from "react";
 import Candidate from "../interfaces/Candidate.interface";
+import { UserRoundX } from "lucide-react";
 
 
 const SavedCandidates = () => {
@@ -16,18 +17,18 @@ const SavedCandidates = () => {
     setSavedCandidates(localcandidates);
   }, []);
 
-  // const ignoreCandidate = (login: string) => {
-  //   const newList = SavedCandidates.filter(
-  //     (candidate) => candidate.login != login
-  //   );
-  //   setSavedCandidates(newList);
-  //   localStorage.setItem("Saved_Candidates", JSON.stringify(newList));
-  // }
-
+  const onIgnore = (login:string) => {
+    const newCandidateList = SavedCandidates.filter(
+      (candidate) => candidate.login != login
+    );
+    setSavedCandidates(newCandidateList);
+    localStorage.setItem("Saved_Candidates", JSON.stringify(newCandidateList));
+  }
+  
   return (
     <div>
       <h1>Potential Candidates</h1>
-      <table>
+      <table className="candidatetable-container">
           <thead>
             <tr>
               <th scope="col">Image</th>
@@ -62,7 +63,7 @@ const SavedCandidates = () => {
                     {candidate.bio} 
                   </td>
                   <td>
-                    {/* <button type='button' id='IgnoreBtn' onClick={() => ignoreCandidate( candidate.login )}> Reject </button> */}
+                  <button type='button' id='IgnoreBtn' onClick={() => onIgnore(String(candidate.login))} style={{alignItems: 'left'}} > < UserRoundX ></UserRoundX>  </button>
                   </td>
                 </tr>
               ))

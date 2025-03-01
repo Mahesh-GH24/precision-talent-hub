@@ -1,4 +1,5 @@
 import type Candidate from "../interfaces/Candidate.interface";
+import { UserRoundX, UserRoundCheck } from "lucide-react";
 
 type CandidateInfoProps = {
     candidate: Candidate;   //Candidate detailed info miciking Candidate Interface
@@ -32,11 +33,11 @@ const CandidateInfo = ({ candidate, onAdd, onIgnore }: CandidateInfoProps) => {
                         <p><strong>Company:</strong> {candidate.company || "Unknown"}</p>
                         <p><strong>Bio:</strong> {candidate.bio || "Unknown"}</p>
                     </article>
-                    <button type='button' id='IgnoreBtn' onClick={() => onIgnore?.()}> Ignore </button>
-                    <button type='button' id='AddBtn' onClick={() => onAdd?.()}> Add </button>
+                    <button type='button' id='IgnoreBtn' onClick={() => onIgnore?.()} style={{alignItems: 'left'}} > < UserRoundX ></UserRoundX>  </button>
+                    <button type='button' id='AddBtn' onClick={() => onAdd?.()} style={{margin: '0'}}> < UserRoundCheck ></UserRoundCheck>  </button>
                 </section>
             ) : (
-                <h1> No Information about the Candidate </h1>
+                <h2> No Information about the Candidate </h2>
             )}
         </>
     );

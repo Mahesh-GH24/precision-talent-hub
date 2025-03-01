@@ -41,6 +41,7 @@ body {
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  text-align: center;
 }
 
 button {
@@ -84,20 +85,21 @@ main {
   align-items: center;
 }
 
-tr {
+/* tr {
   border-radius: 10px;
   background-color: #000;
   color: white;
-}
+} */
 
-tbody tr:nth-child(odd) {
+/* tbody tr:nth-child(odd) {
   background-color: #333333;
-}
+} */
 
 .nav {
   display: flex;
   justify-content: flex-start;
   padding: 1em 2em;
+  text-align: left;
 }
 
 .nav-item {
@@ -108,19 +110,68 @@ tbody tr:nth-child(odd) {
 .nav-link {
   color: #fff;
   text-decoration: none;
+  text-align: left;
+  font-size:medium;
 }
 
 .active {
   font-weight: 700;
 }
 
-.table {
-  width: 80vw;
-  table-layout: fixed;
+.candidatetable-container {
+  border: 1px solid black;
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #f9f9f9;
+  border-spacing: 5px;
+  margin: 0 auto;
 }
+
+.candidatetable-container th {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: rgb(41, 63, 188);
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.candidatetable-container th {
+  padding: 10px;
+  text-align: center;
+  color: white;
+  font-size: 14px;
+  line-height: 1.5;
+  background-color: rgb(41, 63, 188);
+  font-weight: bold;
+  border: 1px solid black;
+}
+
+.candidatetable-container td {
+  text-align: center;
+  padding: 10px;
+  color: #333;
+  font-size: 14px;
+  line-height: 1.5;
+  border: 1px solid black;
+}
+
 
 /* Custom */
 .img {
   width: 100px;
   height: 100px;
+}
+
+
+figure {
+  text-align: center;
+  background-color:whitesmoke;
+}
+
+article {
+  text-align: left;
+  background-color:black ;
 }
