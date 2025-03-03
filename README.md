@@ -9,7 +9,7 @@
    ## Table of Contents
 
    - [Installation](#installation)
-   - [GitHub Repository and Deployed Application URL](#GitHub-APP-URL)
+   - [GitHub Repository and Deployed Application URL](#GitHub-Repository-and-Deployed-Application-URL)
    - [Technologies](#Technologies)
    - [Usage](#usage)
    - [Challenges](#challenges)
