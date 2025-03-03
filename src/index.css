@@ -99,18 +99,23 @@ main {
   display: flex;
   justify-content: flex-start;
   padding: 1em 2em;
-  text-align: left;
+  /* text-align: left; */
+  align-items: center;
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
 }
 
 .nav-item {
-  padding: 0 0.5rem;
+  padding: 0 1rem;
   list-style: none;
 }
 
 .nav-link {
   color: #fff;
   text-decoration: none;
-  text-align: left;
+  /* text-align: left; */
   font-size:medium;
 }
 
@@ -174,4 +179,39 @@ figure {
 article {
   text-align: left;
   background-color:black ;
+}
+
+.div-button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  padding: 5 1rem;
+}
+
+#IgnoreBtn {
+  border:None;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+#AddBtn {
+  border:None;
+  padding: 0.6em 1.2em;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+.candidate-info {
+  width:60%;
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 10px;
+  border: 2px solid white;
+  text-align: center;
+  box-shadow: 0 4px 10px rgb(0, 0, 0.2);
 }
